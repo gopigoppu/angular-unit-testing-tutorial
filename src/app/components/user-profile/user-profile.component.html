@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="image_outer_container">
+      <div class="green_icon"></div>
+      <div class="image_inner_container">
+        <img src="{{userInfo.avatar_url}}">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body text-center mt-4">
+      <h4 class="card-title">{{userInfo.name}}</h4>
+      <p class="card-text">{{userInfo.bio}}
+      </p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a class="social-icon text-xs-center" routerLink="/">
+            Back to Home
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+</div>

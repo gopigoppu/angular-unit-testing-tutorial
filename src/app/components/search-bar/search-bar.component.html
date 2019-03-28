@@ -1,0 +1,29 @@
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <form #searchForm="ngForm" (ngSubmit)="searchRepo(searchQuery.value)">
+      <div class="searchbar">
+        <input class="search_input" type="text" #searchQuery placeholder="Search Repo..." required>
+        <a href="javascript:void(0)" class="search_icon" (click)="searchRepo(searchQuery.value)"><i
+            class="fas fa-search"></i></a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="container" *ngIf="searchQuery.value">
+
+  <div class="alert alert-primary" role="alert">
+    Repositories that maches : "<b>{{searchQuery.value}}</b>"
+  </div>
+
+  <div class="row">
+
+    <div class="alert alert-warning center-position" *ngIf="!searchData" role="alert">
+      No Repositories Found for given Query! Please try different repository name.
+    </div>
+    <app-result-card *ngFor="let repo of searchData" [repo]="repo" class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+    </app-result-card>
+
+  </div>
+</div>

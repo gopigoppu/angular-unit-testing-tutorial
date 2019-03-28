@@ -1,0 +1,23 @@
+<div>
+  <div class="offer" [appScoreHeighlight]="repo.score |  number:'0.0-0'">
+    <div class="shape">
+      <div class="shape-text">
+        {{repo.score |  number:'0.0-0'}}
+      </div>
+    </div>
+    <div class="offer-content">
+      <h3 class="lead">
+        {{repo.name}}
+      </h3>
+      <p>
+        <span>Owner : </span><a routerLink="/user/{{repo.owner.login}}">{{repo.owner.login}}</a>
+      </p>
+      <p>
+        <span>Forks : </span>{{repo.forks}}
+      </p>
+      <p>
+        <span>Stars : </span>{{repo.stargazers_count}}
+      </p>
+    </div>
+  </div>
+</div>
