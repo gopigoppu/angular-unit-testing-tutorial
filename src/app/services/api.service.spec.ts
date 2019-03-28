@@ -28,6 +28,32 @@ describe('ApiService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('getTeam service should be return expected response', () => {
+    const teamStup = {
+      name: 'Gopi',
+      id: 'gopigoppu'
+    };
+    service.getTeam(teamStup).subscribe(
+      (teamDetails) => {
+        expect(teamDetails).toEqual(teamStup, 'expected teamStup');
+      });
+  });
+
+  it('getTeam service should verify falsy return data', () => {
+    const teamStub = {
+      name: 'Gopi',
+      id: 'gopigoppu'
+    };
+    const teamFalsyStub = {
+      name: 'Kannan',
+      id: 'gopigoppu'
+    };
+    service.getTeam(teamStub).subscribe(
+      (teamDetails) => {
+        expect(teamDetails).not.toEqual(teamFalsyStub, 'expected false teamStup');
+      });
+  });
+
 
 
 });
