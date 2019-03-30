@@ -11,7 +11,7 @@ export class SearchBarComponent implements OnInit {
   searchContainer: boolean;
   searchData: any;
 
-  constructor(private apiService: ApiService) { }
+  constructor(public apiService: ApiService) { }
 
   ngOnInit() {
   }
