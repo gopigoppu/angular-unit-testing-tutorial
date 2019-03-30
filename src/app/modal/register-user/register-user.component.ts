@@ -45,7 +45,8 @@ export class RegisterUserComponent implements OnInit {
 
     setTimeout(() => {
       this.spinner.hide();
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+      // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+      alert('registered successfully');
       this.activeModal.dismiss();
     }, 3000);
 
